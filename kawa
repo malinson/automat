@@ -15,16 +15,15 @@
 
 
 var produkty = {
-	"kawa": 
-		[
-		cena = 2,
-		ilosc = 20],
-
-	"expresso": 
-		[
-		cena = 2.5,
-		ilosc = 30],
-	};
+	"kawa": {
+		cena: 2,
+		ilosc: 20
+	},
+	"expresso": {
+		cena: 2.5,
+		ilosc: 30
+	}
+};
 
 
 
@@ -34,10 +33,13 @@ var elo
       	elo = prompt("wybierz napoj" );
     
      if (elo > produkty){
-      		 alert("cena za  napoj" + produkty[elo]);
+      		 alert("cena za  napoj: " + produkty[elo].cena) + ' zł';
+			 produkty[elo].ilosc--;
+			 console.log(produkty);
       		}
 } while(elo != undefined);
-
+			
+			
 
 
 
