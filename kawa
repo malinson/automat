@@ -10,14 +10,10 @@
 <body>
 <script>
 
-
-
-
-
 var produkty = {
 	"kawa": {
 		cena: 2,
-		ilosc: 20
+		ilosc:20
 	},
 	"expresso": {
 		cena: 2.5,
@@ -31,46 +27,27 @@ var produkty = {
 var elo
       do {
       	elo = prompt("wybierz napoj" );
+		if(elo != "kawa" && elo != "expresso"){
+		break;
+		}
     
-     if (elo > produkty){
-      		 alert("cena za  napoj: " + produkty[elo].cena) + ' zł';
-			 produkty[elo].ilosc--;
-			 console.log(produkty);
-      		}
-} while(elo != undefined);
-			
-			
+	if (produkty[elo].ilosc === 0) {
+			 alert("brak");
+	 } else {
+		 alert("cena za  napoj: " + produkty[elo].cena) + ' zł';
+		 produkty[elo].ilosc--;
+		 console.log(produkty);
+	 }
+     
+	
+} while(elo != '');
 
 
 
 </script>
-</body>
-</html>
+			
 
-function hasCorrectContentType(req) {
-  return req.headers['content-type'] === 'application/coffee-pot-command'
-    || req.headers['content-type'] ===  'text/plain';
-}
-		getAdditionsRequested = prompt("wybierz napoj" );
-	function getAdditionsRequested(req) {
-  let header = req.headers['accept-additions'];
-  let drinkType =["kawa", "expresso"];
-  let milkType = ['Cream', 'Half-and-half', 'Whole-milk', 'Part-Skim', 'Skim', 'Non-Dairy'];
-  let syrupType = ['Vanilla', 'Almond', 'Raspberry', 'Chocolate'];
-  let alcoholType = ['Whisky', 'Rum', 'Kahlua', 'Aquavit'];
-  let spiceType = []; 
-  let validTypes = [
-    '*', 
-    ...drinkType,
-    ...milkType,
-    ...syrupType,
-    ...alcoholType,
-    ...spiceType
-  ];
-  if (!header) {
-  	alert("dziala");
-    return [];
-  }
 
-}
+
+
 
