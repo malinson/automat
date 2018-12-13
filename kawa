@@ -4,11 +4,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Moja strona</title>
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 </head>
 <body>
 <script>
+
+			
+			swal("Witamy w automacie do kawy ", {
+  buttons: {
+    cancel: "automat",
+    catch: {
+      text: "kawa",
+      value: "catch",
+    },
+    expresso: true,
+  },
+})
+.then((value) => {
+  switch (value) {
+ 
+    case "expresso":
+      swal("gratulacje wybrałeś expresso ,odśwież strone ,aby przejść do kupna");
+      break;
+ 
+    case "catch":
+      swal("gratulacje wybrałeś kawe ,odśwież strone ,aby przejść do kupna");
+      break;
+ 
+    default:
+      swal("odśwież strone ,aby przejść do kupna");
+  }
+});
 
 var produkty = {
 	"kawa": {
